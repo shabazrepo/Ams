@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html ng-app="amsModule">
+	<head>
+		<title>AppKit</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">    
+
+		
+	</head>	<body>
+	<app-kit-responsive class="preload [[theme]]" ng-class="{'compact': compact, 'mobile': mobile, 'nav-toggled': navOpen}">
+<!----------------*-HEADER MENU DIRECTIVE ADDED HERE .-*****---------------------------------...-->	
+		<header>
+<div my-directive template-path="views/headermenu.html"> </div>
+    </header>
+<!----------------------------------------------------------------------->
+		<!-- left menu View Added Here ------------------------>
+ 
+<div ng-include="'views/leftpanel.html'"></div> 
+ 
+<!-- /left menu -------------------------------------------->
+		
+<div ng-cloak class="content-wrapper view discussions-view" ng-controller="workStationController">
+	<div class="container-fluid">
+		<div class="projects-heading">
+			<h2 class="view-title">Work Station</h2>
+			<div class="actions">
+				<button class="btn btn-success" ng-click="open()"><i class="fa fa-plus"></i>New Work Station</button>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row">
+			<app-kit-module module-class="discussions-module module-no-heading" wrapper-class="col-md-12 col-sm-12 col-xs-12" content-class="no-padding-bottom">
+				<pane-body>
+				
+				<table ng-table="table2Params" class="table table-striped" show-filter="false">
+					<tr ng-repeat="workstation in workstation">
+					    <td title="'Asset State'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.assetStateName]]</td>
+					<!-- 	<td title="'Asset Model'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.assetmodelId]]</td> -->
+						<td title="'Name'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.name]]</td>
+						<td title="'Service Pack'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.servicePack]]</td>
+						<td title="'Manufacturer'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.manufacturer]]</td>
+						<td title="'HardDiskMemory'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.hardDiskMemory]]</td>
+						<td title="'VirtualMemory'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.virtualMemory]]</td>
+						<td title="'OperationSystem'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.operationSystem]]</td>
+						<td title="'Business Impack'" filter="{ type: 'text'}" sortable="'type'">
+							[[workstation.businessImpact]]</td>
+						<td title="'Desciption'" filter="{ description: 'text'}" sortable="'description'">
+							[[workstation.description]]</td>
+					</tr>
+				</table>
+				</pane-body>
+			</app-kit-module>
+		</div>
+	</div>
+</div>
+<script type="text/ng-template" id="addWorkStation.html" ng-controller="addWorkStation">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Create New Work Station</h4>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="form-group">
+						<label>Asset State</label>
+						<div class="col-sm-15">
+							<select class="form-control" ng-model="addworkstation.assetstateId">
+							 <option value="">---select---</option>
+     						 <option ng-repeat="option in assetstate" value="[[option.id]]">[[option.name]]</option>
+							</select>
+						</div>
+			</div>
+            <div class="form-group">
+						<label>Asset Model</label>
+						<div class="col-sm-15">
+							<select class="form-control" ng-model="addworkstation.assetmodelId">
+							 <option value="">---select---</option>
+     						 <option ng-repeat="option in assetmodel" value="[[option.id]]">[[option.name]]</option>
+							</select>
+						</div>
+			</div>
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" class="form-control" placeholder="Name" ng-model="addworkstation.name">
+			</div>
+			<div class="form-group">
+				<label>Service Pack</label>
+				<input type="text" class="form-control" placeholder="Service pack" ng-model="addworkstation.servicePack">
+			</div>
+			<div class="form-group">
+				<label>Manufacturer</label>
+				<input type="text" class="form-control" placeholder="Manufacturer" ng-model="addworkstation.manufacturer">
+			</div>
+			<div class="form-group">
+				<label>HardDisk Memory </label>
+				<input type="text" class="form-control" placeholder="HardDisk Memory" ng-model="addworkstation.hardDiskMemory">
+			</div>
+			<div class="form-group">
+				<label>Virtual Memory</label>
+				<input type="text" class="form-control" placeholder="Virtual Memory" ng-model="addworkstation.virtualMemory">
+			</div>
+			<div class="form-group">
+				<label>Operation System</label>
+				<input type="text" class="form-control" placeholder="Operation System" ng-model="addworkstation.operationSystem">
+			</div>
+
+			<div class="form-group">
+				<label>Business Impact</label>
+				<input type="text" class="form-control" placeholder="Business Impact" ng-model="addworkstation.businessImpact">
+			</div>
+
+			<div class="form-group">
+				<label>Description</label>
+				<textarea class="form-control" rows="6" placeholder="Enter your description..." ng-model="addworkstation.description"></textarea>    
+			</div>
+             <h5 class="modal-title">WorkProcessor</h5>
+            <div class="form-group">
+				<label>Name</label>
+				<input type="text" class="form-control" placeholder="Name" ng-model="addworkstation.workProcessorVO.name">
+			</div>
+             <div class="form-group">
+				<label>Speed</label>
+				<input type="text" class="form-control" placeholder="Speed" ng-model="addworkstation.workProcessorVO.speed">
+			</div>
+             <div class="form-group">
+				<label>No of Cores</label>
+				<input type="text" class="form-control" placeholder="No of Cores" ng-model="addworkstation.workProcessorVO.noOfCores">
+			</div>
+            <h5 class="modal-title">WorkStationOtherBranchDetails </h5>
+             <div class="form-group">
+				<label>OtherType</label>
+				<input type="text" class="form-control" placeholder="OtherType" ng-model="addworkstation.workStationOtherDetailsVO.otherType">
+			</div>
+              <div class="form-group">
+				<label>Manufacturer</label>
+				<input type="text" class="form-control" placeholder="Manufacturer" ng-model="addworkstation.workStationOtherDetailsVO.manufacturer">
+			</div>
+  			<div class="form-group">
+				<label>Serial Number</label>
+				<input type="text" class="form-control" placeholder="Serial Number" ng-model="addworkstation.workStationOtherDetailsVO.serNumber">
+			</div>
+              <h5 class="modal-title">Memory</h5>
+            <div class="form-group">
+				<label>Model</label>
+				<input type="text" class="form-control" placeholder="Model" ng-model="addworkstation.memoryVO.model">
+			</div>
+            <div class="form-group">
+				<label>Barcode</label>
+				<input type="text" class="form-control" placeholder="Barcode" ng-model="addworkstation.memoryVO.barcode">
+			</div>
+            <div class="form-group">
+				<label>Size</label>
+				<input type="text" class="form-control" placeholder="Size" ng-model="addworkstation.memoryVO.size">
+			</div>
+			<button type="button" class="btn btn-success margin-top-md center-block" data-dismiss="modal" ng-click="addWorkStationForm()">Create Topic</button>
+		</form>
+	</div>
+</script>
+		<footer class="site-footer" ng-show="showFooter">
+		    <div class="copyright">Copyright &copy; 2016 - <a>Bootstrap Admin Theme</a></div>
+		</footer>	
+	<div class="config-panel hidden-xs" ng-class="{'config-panel-open': showConfigurator}">
+			<div class="panel-inner">
+				<a class="config-trigger config-panel-hide" ng-click="showConfigurator = !showConfigurator"><i class="fa fa-cog"></i></a>
+				<div class="panel-section margin-bottom-md">
+					<h5 class="panel-title">Choose Colour</h5>
+					<ul id="color-options" class="list-unstyled list-unstyled">
+						<li class="theme-1 active" ><a ng-click="theme = 'theme-1'"></a></li>
+						<li class="theme-2"><a ng-click="theme = 'theme-2'"></a></li>
+						<li class="theme-3"><a ng-click="theme = 'theme-3'"></a></li>
+						<li class="theme-4"><a ng-click="theme = 'theme-4'"></a></li>
+					</ul>
+				</div>
+				<div class="panel-section">
+					<h5 class="panel-title">Toggles</h5>
+					<div class="checkbox">
+						<label>
+							<input ng-model="showTopAlert" type="checkbox"> Top Alert
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input ng-model="showFooter" type="checkbox"> Footer
+						</label>
+					</div>
+				</div>
+				<a ng-click="showConfigurator = false" class="close"><span aria-hidden="true" class="icon icon_close"></span></a>
+			</div>
+		</div>		
+
+		</app-kit-responsive>
+			</body>
+</html>

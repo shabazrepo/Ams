@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="assetManagement">
+	<head>
+		<title>AppKit</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">    
+	</head>	<body><app-kit-responsive class="preload [[theme]]" ng-class="{'compact': compact, 'mobile': mobile, 'nav-toggled': navOpen}">
+<!----------------*-HEADER MENU DIRECTIVE ADDED HERE .-*****---------------------------------...-->	
+		<header>
+<div my-directive template-path="views/headermenu.html"> </div>
+    </header>
+<!----------------------------------------------------------------------->
+		<!-- left menu View Added Here ------------------------>
+ 
+<div ng-include="'views/leftpanel.html'"></div> 
+ 
+<!-- /left menu -------------------------------------------->
+		
+				<div ng-cloak class="content-wrapper view discussions-view" ng-controller="organizationDetailsController">
+	<div class="container-fluid">
+		<div class="projects-heading">
+			<h2 class="view-title">Organization Details</h2>
+			<div class="actions">
+				<button class="btn btn-success" ng-click="open()"><i class="fa fa-plus"></i>New Organization Details</button>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row">
+			<app-kit-module module-class="discussions-module module-no-heading" wrapper-class="col-md-12 col-sm-12 col-xs-12" content-class="no-padding-bottom">
+				<pane-body>
+				
+				<table ng-table="table2Params" class="table table-striped" show-filter="false">
+					<tr ng-repeat="org in org">
+					   <td title="'Organization Name'" filter="{ type: 'text'}" sortable="'type'">
+							[[org.orgName]]</td>
+						<td title="'Desciption'" filter="{ description: 'text'}" sortable="'description'">
+							[[org.description]]</td>
+						<td title="'Email'" filter="{ type: 'text'}" sortable="'type'">
+							[[org.email]]</td>
+						<td title="'Phone'" filter="{ type: 'text'}" sortable="'type'">
+							[[org.phone]]</td>
+						<td title="'Fax'" filter="{ type: 'text'}" sortable="'type'">
+							[[org.fax]]</td>
+						<td title="'Website'" filter="{ type: 'text'}" sortable="'type'">
+							[[org.website]]</td>
+						<td title="'Company logo'" filter="{ type: 'text'}" sortable="'type'">
+							[[org.companyLogo]]</td>
+					</tr>
+				</table>
+				</pane-body>
+			</app-kit-module>
+		</div>
+	</div>
+</div>
+<script type="text/ng-template" id="addOrganizationDetails.html" ng-controller="addOrganizationDetails">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Create New Organization Details</h4>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="form-group">
+				<label>Organization Name</label>
+				<input type="text" class="form-control" placeholder="Organization Name" ng-model="addOrganizationDetails.orgName">
+			</div>
+			<div class="form-group">
+				<label>Description</label>
+				<textarea class="form-control" rows="6" placeholder="Enter your description..." ng-model="addOrganizationDetails.description"></textarea>    
+			</div>
+           <div class="form-group">
+				<label>Email</label>
+				<input type="text" class="form-control" placeholder="Email" ng-model="addOrganizationDetails.email">
+			</div>
+            <div class="form-group">
+				<label>Phone</label>
+				<input type="text" class="form-control" placeholder="Phone" ng-model="addOrganizationDetails.phone">
+			</div>
+			<div class="form-group">
+				<label>Fax</label>
+				<input type="text" class="form-control" placeholder="Fax" ng-model="addOrganizationDetails.fax">
+			</div>
+			<div class="form-group">
+				<label>Website</label>
+				<input type="text" class="form-control" placeholder="Website" ng-model="addOrganizationDetails.website">
+			</div>
+			<div class="form-group">
+				<label>Company Logo</label>
+				<input type="text" class="form-control" placeholder="Company Logo" ng-model="addOrganizationDetails.companyLogo">
+			</div>
+			<button type="button" class="btn btn-success margin-top-md center-block" data-dismiss="modal" ng-click="addOrganizationDetailsForm()">Submit</button>
+		</form>
+	</div>
+</script>
+		<footer class="site-footer" ng-show="showFooter">
+		    <div class="copyright">Copyright &copy; 2016 - <a>Bootstrap Admin Theme</a></div>
+		</footer>	
+	<div class="config-panel hidden-xs" ng-class="{'config-panel-open': showConfigurator}">
+			<div class="panel-inner">
+				<a class="config-trigger config-panel-hide" ng-click="showConfigurator = !showConfigurator"><i class="fa fa-cog"></i></a>
+				<div class="panel-section margin-bottom-md">
+					<h5 class="panel-title">Choose Colour</h5>
+					<ul id="color-options" class="list-unstyled list-unstyled">
+						<li class="theme-1 active" ><a ng-click="theme = 'theme-1'"></a></li>
+						<li class="theme-2"><a ng-click="theme = 'theme-2'"></a></li>
+						<li class="theme-3"><a ng-click="theme = 'theme-3'"></a></li>
+						<li class="theme-4"><a ng-click="theme = 'theme-4'"></a></li>
+					</ul>
+				</div>
+				<div class="panel-section">
+					<h5 class="panel-title">Toggles</h5>
+					<div class="checkbox">
+						<label>
+							<input ng-model="showTopAlert" type="checkbox"> Top Alert
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input ng-model="showFooter" type="checkbox"> Footer
+						</label>
+					</div>
+				</div>
+				<a ng-click="showConfigurator = false" class="close"><span aria-hidden="true" class="icon icon_close"></span></a>
+			</div>
+		</div>		
+
+		</app-kit-responsive>
+	</body>
+</html>

@@ -1,0 +1,6 @@
+<li ng-class="{active: active, disabled: disabled}">
+	<a href ng-click="select()" uib-tab-heading-transclude>
+		<i class="[[tabIconClass]]" ng-if="tabIconClass"></i>
+		<span ng-class="{tabIconClass: 'hidden-xs hidden-sm'}">[[heading]]</span>
+	</a>
+</li>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="amsModule">
+	<head>
+		<title>AppKit</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">    
+
+		
+	</head>	<body>
+	<app-kit-responsive class="preload [[theme]]" ng-class="{'compact': compact, 'mobile': mobile, 'nav-toggled': navOpen}">
+<!----------------*-HEADER MENU DIRECTIVE ADDED HERE .-*****---------------------------------...-->	
+		<header>
+<div my-directive template-path="views/headermenu.html"> </div>
+    </header>
+<!----------------------------------------------------------------------->
+		<!-- left menu View Added Here ------------------------>
+ 
+<div ng-include="'views/leftpanel.html'"></div> 
+ 
+<!-- /left menu -------------------------------------------->
+		
+<div ng-cloak class="content-wrapper view discussions-view" ng-controller="assetTypeController">
+	<div class="container-fluid">
+		<div class="projects-heading">
+			<h2 class="view-title">Asset Types</h2>
+			
+			<div class="actions" >
+			<span class="pull-right icons default">
+				<button class="btn btn-success" ng-click="open()" id="default"><i class="fa fa-plus"></i>New Asset Type</button>
+			</span>
+			</div>
+			
+			
+			<div class="actions" >
+			<span class="pull-right icons controls">
+			<button class="btn btn-success" ng-click="edit()" id="default">Edit AssetType</button>
+		    </span>
+		     </div>
+		     </div>
+		<div class="clearfix"></div>
+		<div class="row">
+			<app-kit-module module-class="discussions-module module-no-heading" wrapper-class="col-md-12 col-sm-12 col-xs-12" content-class="no-padding-bottom">
+				<pane-body>
+				
+				<table ng-table="table2Params" class="table table-striped" show-filter="false">
+				<thead>
+				<tr>
+                 <th><input type="checkbox"  ng-model="selectedAll" ng-change="checkAll(selectedAll)" ></th>
+                 <th>AssetType</th> 
+                  <th> Description </th>
+                  </tr>
+                   </thead>
+					<tr ng-repeat="asset in asset">
+					<td><input type="checkbox" ng-model="asset.cid" ng-click="checkedIndex(asset.cid,asset)" class="ng-valid ng-touched ng-dirty ng-valid-parse"></td>
+						<td>
+							[[asset.type]]</td>
+						<td>
+							[[asset.description]]</td>
+					</tr>
+				</table>
+				</pane-body>
+			</app-kit-module>
+		</div>
+		<div class="dialog" id="Edit1">
+<div class="tbl">
+<div class="tcell">
+<div class="inlineBlock">
+<h4 class="mart30 marb60"> You Can't edit more than one Lead </h4>
+<div class="row">
+<div class="col-xs-15"><a class="btn btn-primary btn-block">OK</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+<script type="text/ng-template" id="addAssetType.html" ng-controller="addAssetType">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Create New Asset Type</h4>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="form-group">
+						<label  for="repeatSelect">Category Type</label>
+						<div class="col-sm-15">
+							<select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="addassettype.categoryId" autofocus>
+							 <option value="">---select---</option>
+     						 <option ng-repeat="option in categories" value="[[option.id]]">[[option.categoryName]]</option>
+                              
+							</select>
+                            
+						</div>
+			</div>
+			<div class="form-group">
+				<label>Asset Name</label>
+				<input type="text" class="form-control" placeholder="Asset Name" ng-model="addassettype.type">
+			</div>
+			<div class="form-group">
+				<label>Description</label>
+				<textarea class="form-control" rows="6" placeholder="Enter your description..." ng-model="addassettype.description"></textarea>    
+			</div>
+			<button type="button" class="btn btn-success margin-top-md center-block" data-dismiss="modal" ng-click="addAssetForm()">Submit</button>
+		</form>
+	</div>
+</script>
+
+	           <footer class="site-footer" ng-show="showFooter">
+		    <div class="copyright">Copyright &copy; 2016 - <a>Bootstrap Admin Theme</a></div>
+		</footer>	
+	<div class="config-panel hidden-xs" ng-class="{'config-panel-open': showConfigurator}">
+			<div class="panel-inner">
+				<a class="config-trigger config-panel-hide" ng-click="showConfigurator = !showConfigurator"><i class="fa fa-cog"></i></a>
+				<div class="panel-section margin-bottom-md">
+					<h5 class="panel-title">Choose Colour</h5>
+					<ul id="color-options" class="list-unstyled list-unstyled">
+						<li class="theme-1 active" ><a ng-click="theme = 'theme-1'"></a></li>
+						<li class="theme-2"><a ng-click="theme = 'theme-2'"></a></li>
+						<li class="theme-3"><a ng-click="theme = 'theme-3'"></a></li>
+						<li class="theme-4"><a ng-click="theme = 'theme-4'"></a></li>
+					</ul>
+				</div>
+				<div class="panel-section">
+					<h5 class="panel-title">Toggles</h5>
+					<div class="checkbox">
+						<label>
+							<input ng-model="showTopAlert" type="checkbox"> Top Alert
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input ng-model="showFooter" type="checkbox"> Footer
+						</label>
+					</div>
+				</div>
+				<a ng-click="showConfigurator = false" class="close"><span aria-hidden="true" class="icon icon_close"></span></a>
+			</div>
+		</div>		
+
+		</app-kit-responsive>
+			</body>
+</html>

@@ -1,0 +1,82 @@
+2018-03-19 21:40:51 INFO  SimpleCORSFilter:24 - SimpleCORSFilter init
+2018-03-19 21:40:51 INFO  DispatcherServlet:479 - FrameworkServlet 'mvc-dispatcher': initialization started
+2018-03-19 21:40:51 INFO  XmlWebApplicationContext:513 - Refreshing WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Mon Mar 19 21:40:51 EDT 2018]; root of context hierarchy
+2018-03-19 21:40:51 INFO  XmlBeanDefinitionReader:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-config.xml]
+2018-03-19 21:40:52 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-19 21:40:52 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2018-03-19 21:40:52 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2018-03-19 21:40:52 INFO  Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.show_sql=true, hibernate.bytecode.use_reflection_optimizer=false}
+2018-03-19 21:40:52 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-19 21:40:53 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-19 21:40:53 INFO  LobCreatorBuilder:97 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-03-19 21:40:53 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-19 21:40:53 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-19 21:40:54 INFO  SimpleCORSFilter:24 - SimpleCORSFilter init
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assetdetails/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetDetailsController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assetdetails/createAssetDetails],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetDetailsController.createOrg(com.aitacs.ams.vo.AssetDetailsVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assetmodel/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetModelController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assetmodel/createAssetModel],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetModelController.createCategory(com.aitacs.ams.vo.AssetModelVO)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assetstate/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetStateController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assetstate/createAssetState],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetStateController.createOrg(com.aitacs.ams.vo.AssetStateVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assettype/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetTypeController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assettype/getAssetTypesByOranizationId/{orgId}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetTypeController.getAssetTypesByOranizationId(java.lang.Long,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/assettype/createAssetType],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.AssetTypeController.createOrg(com.aitacs.ams.vo.AssetTypeVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/category/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.CategoryController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/category/createCategory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.CategoryController.createCategory(com.aitacs.ams.vo.CategoryVO)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/login/verifyLogin],methods=[POST],params=[],headers=[],consumes=[application/json],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.LoginController.verifyLogin(com.aitacs.ams.vo.UserVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/orgBranch/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationBranchController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/orgBranch/createBranch],methods=[POST],params=[],headers=[],consumes=[application/json],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationBranchController.createOrg(com.aitacs.ams.vo.OrganizationBranchDetailsVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/org/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/org/{orgId}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationController.getOrganizationById(java.lang.Long,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/org/createOrg],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationController.createOrg(com.aitacs.ams.vo.OrganizationDetailsVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/orgDepartment/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationDepartmentController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/orgDepartment/createOrgDepartment],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationDepartmentController.createOrgDepartment(com.aitacs.ams.vo.OrgDepartmentsVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/orgDepartment/getBranchDepartments/{branchId}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.OrganizationDepartmentController.getBranchDepartments(java.lang.Long,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/software/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.SoftwareController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/software/createSoftware],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.SoftwareController.createSoftware(com.aitacs.ams.vo.SoftwareVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/user/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.UserController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/user/createUser],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.UserController.createOrg(com.aitacs.ams.vo.UserVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/vendor/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.VendorController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/vendor/createVendor],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.VendorController.createVendor(com.aitacs.ams.vo.VendorVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/workprocessor/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.WorkProcessorController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/WorkStation/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.WorkSationController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/WorkStation/createWorkStation],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.WorkSationController.createOrg(com.aitacs.ams.vo.WorkStationVO,javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  RequestMappingHandlerMapping:197 - Mapped "{[/workstationotherdetails/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.aitacs.ams.controller.WorkStationOtherDetailsController.getAll(javax.servlet.http.HttpServletRequest)
+2018-03-19 21:40:54 INFO  HibernateTransactionManager:339 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@102ff02f] of Hibernate SessionFactory for HibernateTransactionManager
+2018-03-19 21:40:54 INFO  DispatcherServlet:498 - FrameworkServlet 'mvc-dispatcher': initialization completed in 3426 ms
+2018-03-19 21:41:31 DEBUG LoginController:35 - enter into verify login controller 
+2018-03-19 21:41:32 DEBUG AssetTypeController:34 - enter into verify login controller 
+2018-03-19 21:41:32 DEBUG AssetTypeController:34 - enter into verify login controller 
+2018-03-19 21:41:32 DEBUG AssetTypeServiceImpl:44 - entering into assettype service
+2018-03-19 21:41:32 DEBUG AssetTypeServiceImpl:44 - entering into assettype service
+2018-03-19 21:41:32 DEBUG CategoryController:32 - enter into verify login controller 
+2018-03-19 21:41:32 DEBUG CategoryServiceImpl:42 - entering into category service
+2018-03-19 21:41:37 DEBUG AssetModelController:32 - enter into asset model controller 
+2018-03-19 21:41:37 DEBUG AssetModelController:32 - enter into asset model controller 
+2018-03-19 21:41:37 DEBUG AssetModelServiceImpl:48 - entering into category service
+2018-03-19 21:41:37 DEBUG AssetModelServiceImpl:48 - entering into category service
+2018-03-19 21:41:37 DEBUG VendorController:31 - enter into vendor controller 
+2018-03-19 21:41:37 DEBUG VendorServiceImpl:47 - entering into vendor service
+2018-03-19 21:45:48 DEBUG LoginController:35 - enter into verify login controller 
+2018-03-19 21:45:48 DEBUG AssetTypeController:34 - enter into verify login controller 
+2018-03-19 21:45:48 DEBUG CategoryController:32 - enter into verify login controller 
+2018-03-19 21:45:48 DEBUG AssetTypeServiceImpl:44 - entering into assettype service
+2018-03-19 21:45:48 DEBUG CategoryServiceImpl:42 - entering into category service
+2018-03-19 21:45:48 DEBUG AssetTypeController:34 - enter into verify login controller 
+2018-03-19 21:45:48 DEBUG AssetTypeServiceImpl:44 - entering into assettype service
+2018-03-19 21:45:59 DEBUG CategoryController:32 - enter into verify login controller 
+2018-03-19 21:45:59 DEBUG CategoryServiceImpl:42 - entering into category service
+2018-03-19 21:45:59 DEBUG CategoryController:32 - enter into verify login controller 
+2018-03-19 21:45:59 DEBUG CategoryServiceImpl:42 - entering into category service
+2018-03-19 21:47:52 DEBUG AssetDetailsController:30 - enter into assetdetails controller 
+2018-03-19 21:47:52 DEBUG AssetStateController:32 - enter into asset state get all 
+2018-03-19 21:47:52 DEBUG AssetModelController:32 - enter into asset model controller 
+2018-03-19 21:47:52 DEBUG AssetDetailsServiceImpl:43 - entering into assetdetails service
+2018-03-19 21:47:52 DEBUG AssetStateServiceImpl:42 - entering into AssetState service
+2018-03-19 21:47:52 DEBUG AssetModelServiceImpl:48 - entering into category service
+2018-03-19 21:47:52 DEBUG AssetDetailsController:30 - enter into assetdetails controller 
+2018-03-19 21:47:52 DEBUG AssetDetailsServiceImpl:43 - entering into assetdetails service
+2018-03-19 22:15:07 DEBUG AssetModelController:32 - enter into asset model controller 
+2018-03-19 22:15:07 DEBUG AssetStateController:32 - enter into asset state get all 
+2018-03-19 22:15:07 DEBUG AssetModelServiceImpl:48 - entering into category service
+2018-03-19 22:15:07 DEBUG AssetStateServiceImpl:42 - entering into AssetState service

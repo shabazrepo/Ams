@@ -1,0 +1,35 @@
+<div class="module-wrapper [[ wrapperClass ]]">
+	<section class="module [[ moduleClass ]]" ng-class="{ 'collapsed':collapsed }">
+		<div class="module-inner">
+			<div class="module-heading" ng-if="title || meta">
+				<h3 class="module-title">
+					[[ title ]]
+				</h3><div class="meta" ng-if="meta">
+					[[ meta ]]
+				</div>
+				<ul class="actions list-inline" ng-if="controls || showMore">
+					<li class="more-link" ng-if="showMore">
+						<span ng-transclude="more"></span>
+					</li>
+					<li>
+						<a class="collapse-module" ng-click="collapseModule($event)">
+							<span class="icon arrow_carrot-up" aria-hidden="true"></span>
+						</a>
+					</li>
+					<li>
+						<a class="close-module" ng-click="closeModule($event)">
+							<span class="icon icon_close" aria-hidden="true"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="module-content" uib-collapse="collapsed">
+				<div class="module-content-inner [[ contentClass ]]">
+					<div ng-transclude="body"></div>
+				</div>
+			</div>
+			<div class="module-footer" ng-transclude="footer" ng-if="showFooter">
+			</div>
+		</div>
+	</section>
+</div>
